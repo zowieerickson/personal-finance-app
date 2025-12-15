@@ -28,9 +28,12 @@ export default function LoginPage() {
 
     return (
         <div className={styles.login}>
-            <h1>This is the login page!</h1>
+            <h1>This is the Sign Up page!</h1>
             <a href="/">Home</a>
             <a href="/about">About</a>
+            <div>
+                Image
+            </div>
             <div className={styles.loginBox}>
                 <form onSubmit={handleSubmit}>
                     <h2>Sign up</h2>
