@@ -5,14 +5,10 @@
 
   color-scheme: light dark;
   color: #2a292e;
-  background-color: #f8f4f0;;
+  background-color: #f8f4f0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-input {
-  border: 1px solid black;
 }

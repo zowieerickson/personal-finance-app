@@ -6,3 +6,21 @@
 .loginBox {
     background-color: #fff;
 }
+
+.loginImg {
+    width: 100%;
+    height: 920px;
+    background-image: url("/src/assets/images/illustrations/illustration-authentication.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    max-width: 560px;
+}
+
+.logoOverlay {
+    background-image: url("/src/assets/images/logos/logo-large.svg");
+    height: 22px;
+    width: 122px;
+    background-repeat: no-repeat;
+}
