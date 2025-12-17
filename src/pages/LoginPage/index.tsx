@@ -28,10 +28,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="lg:p-5">
-      <div className="flex flex-col items-center lg:min-h-screen lg:flex-row">
-        <div className="block py-6 bg-black rounded-b-xl flex justify-center w-full lg:flex-col lg:justify-between lg:basis-[40%] lg:shrink-0 lg:max-w-xl lg:min-h-screen  lg:p-10 lg:bg-[url('/src/assets/images/illustrations/illustration-authentication.svg')] lg:bg-cover lg:bg-center lg:rounded-xl">
-          <div className="bg-[url('/src/assets/images/logos/logo-large.svg')] w-[122px] h-[22px] w-100%"></div>
+    <div className="h-screen">
+      <div className="flex flex-col items-center h-full items-stretch lg:flex-row lg:p-5">
+        <div className="block py-6 bg-black rounded-b-xl flex justify-center w-full lg:flex-col lg:justify-between lg:basis-[40%] lg:shrink-0 lg:max-w-xl lg:self-stretch lg:p-10 lg:bg-[url('/src/assets/images/illustrations/illustration-authentication.svg')] lg:bg-cover lg:bg-center lg:rounded-xl">
+          <div className="bg-[url('/src/assets/images/logos/logo-large.svg')] w-[122px] h-[22px]"></div>
           <div className="hidden text-white lg:block">
             <h3 className="text-3xl font-bold pb-6">
               Keep track of your money and&nbsp;save for your&nbsp;future
@@ -42,7 +42,7 @@ export default function LoginPage() {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center min-h-screen w-full lg-basis-[60%] px-4">
+        <div className="h-full flex items-center justify-center w-full lg-basis-[60%] px-4">
           <div className="bg-white w-full p-[32px] md:w-[560px] rounded-xl">
             <form onSubmit={handleSubmit} className="flex flex-col pb-8">
               <h2 className="pb-[32px] font-bold text-[32px]">Login</h2>
