@@ -29,13 +29,19 @@ export default function LoginPage() {
 
   return (
     <div className={styles.login}>
-      <h1>This is the Sign Up page!</h1>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
       <div className="p-5">
         <div className="flex min-h-screen">
-          <div className="hidden md:block basis-[40%] shrink-0 max-w-xl bg-[url('/src/assets/images/illustrations/illustration-authentication.svg')] bg-cover bg-center p-4 rounded-xl">
+          <div className="hidden lg:flex lg:flex-col lg:justify-between basis-[40%] shrink-0 max-w-xl p-10 bg-[url('/src/assets/images/illustrations/illustration-authentication.svg')] bg-cover bg-center rounded-xl">
             <div className={styles.logoOverlay}></div>
+            <div className="text-white">
+              <h3 className="text-3xl font-bold pb-6">
+                Keep track of your money and&nbsp;save for your&nbsp;future
+              </h3>
+              <p className="text-sm">
+                Personal finance app puts you in control of your spending. Track
+                transactions, set budgets, and add to savings pots easily.
+              </p>
+            </div>
           </div>
           <div className="flex basis-[60%] items-center justify-center">
             <div className="bg-white p-[32px] w-[560px] rounded-xl">
