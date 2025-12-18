@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styles from "./LoginPage.module.css";
 import AuthLayout from "../../components/auth/AuthLayout";
 
 export default function LoginPage() {
