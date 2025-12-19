@@ -2,29 +2,25 @@ import { useState } from "react";
 import AuthLayout from "../../components/auth/AuthLayout";
 
 export default function LoginPage() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    const payload = {
-      name,
-      password,
-      email,
-    };
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email");
+    const name = formData.get("name");
+    const password = formData.get("password");
+    console.log({ email, name, password });
 
     const response = await fetch("http://localhost:5173/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(formData),
     });
 
-    // console.log(response);
-    console.log(payload);
+    console.log("response", response);
+    console.log("formData", [...formData.entries()]);
     // const data = await response.json();
     // console.log("Backend response:", data);
   };
@@ -43,10 +39,10 @@ export default function LoginPage() {
                   </span>
                   <input
                     type="text"
-                    value={name}
+                    name="name"
                     placeholder="Placeholder"
                     className="pl-5 py-3 rounded-md border border-stone-400"
-                    onChange={(e) => setName(e.target.value)}
+                    required
                   ></input>
                 </label>
               </div>
@@ -57,10 +53,10 @@ export default function LoginPage() {
                   </span>
                   <input
                     type="email"
-                    value={email}
+                    name="email"
                     placeholder="Placeholder"
                     className="pl-5 py-3 rounded-md border border-stone-400"
-                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   ></input>
                 </label>
               </div>
@@ -71,10 +67,10 @@ export default function LoginPage() {
                   </span>
                   <input
                     type="password"
-                    value={password}
+                    name="password"
                     placeholder="Placeholder"
                     className="pl-5 py-3 rounded-md border border-stone-400"
-                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   ></input>
                 </label>
               </div>

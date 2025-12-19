@@ -45,6 +45,7 @@ export default function LoginPage() {
                     placeholder="Placeholder"
                     className="pl-5 py-3 rounded-md border border-stone-400"
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                   ></input>
                 </label>
               </div>
@@ -59,6 +60,7 @@ export default function LoginPage() {
                     placeholder="Placeholder"
                     className="pl-5 py-3 rounded-md border border-stone-400"
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                   ></input>
                 </label>
               </div>
