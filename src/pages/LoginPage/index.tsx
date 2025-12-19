@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AuthLayout from "../../components/auth/AuthLayout";
+import AuthSubmit from "../../components/auth/AuthSubmit";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -65,12 +66,7 @@ export default function LoginPage() {
                 </label>
               </div>
             </div>
-            <button
-              type="submit"
-              className="text-sm font-bold text-white bg-[#201F24] py-4 rounded-md"
-            >
-              Login
-            </button>
+            <AuthSubmit>Login</AuthSubmit>
           </form>
           <p className="text-center text-[#696868]">
             Need to create an account?
