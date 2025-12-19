@@ -2,7 +2,7 @@ import { useState } from "react";
 import AuthLayout from "../../components/auth/AuthLayout";
 
 export default function LoginPage() {
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
