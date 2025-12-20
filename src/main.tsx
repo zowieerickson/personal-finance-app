@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import "./index.css";
 
+import Home from "./pages/Home.tsx";
 import LoginPage from "./pages/LoginPage";
 import SignUp from "./pages/SignUp";
 import AboutPage from "./pages/AboutPage";
@@ -13,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Home />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="about" element={<AboutPage />} />
