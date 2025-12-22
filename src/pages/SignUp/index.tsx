@@ -1,35 +1,30 @@
 import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
+import { signUp } from "../../services/auth";
 
 export default function LoginPage() {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-    const email = formData.get("email");
-    const name = formData.get("name");
-    const password = formData.get("password");
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
     console.log({ email, name, password });
 
-    const response = await fetch("http://localhost:5173/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    console.log("response", response);
-    console.log("formData", [...formData.entries()]);
-    // const data = await response.json();
-    // console.log("Backend response:", data);
+    try {
+      const user = await signUp({ name, email, password });
+      console.log("Signed up user: ", user);
+    } catch (err: any) {
+      console.error(err.message);
+    }
   };
 
   return (
     <AuthLayout>
       <section className="h-full flex items-center justify-center w-full lg-basis-[60%] px-4">
         <div className="bg-white w-full px-5 py-6 md:p-[32px] sm:w-[560px] rounded-xl">
-          <form onSubmit={handleSubmit} className="flex flex-col pb-8">
+          <form onSubmit={handleSignUp} className="flex flex-col pb-8">
             <h2 className="pb-[32px] font-bold text-[32px]">Sign Up</h2>
             <div className="mb-8">
               <div className="mb-4">
