@@ -1,13 +1,30 @@
 import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
+import { signIn } from "../../services/auth";
+import { useNavigate } from "react-router";
 
 export default function LoginPage() {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email");
     const password = formData.get("password");
+
+    if (typeof email !== "string" || typeof password !== "string") {
+      console.error("invalid form data");
+      return;
+    }
+
+    try {
+      const data = await signIn({ email, password });
+      console.log("Success! ", data);
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+    }
 
     console.log({ email, password });
   };
@@ -16,7 +33,7 @@ export default function LoginPage() {
     <AuthLayout>
       <section className="h-full flex items-center justify-center w-full lg-basis-[60%] px-4">
         <div className="bg-white w-full px-5 py-6 md:p-[32px] sm:w-[560px] rounded-xl">
-          <form onSubmit={handleSubmit} className="flex flex-col pb-8">
+          <form onSubmit={handleLogin} className="flex flex-col pb-8">
             <h2 className="pb-[32px] font-bold text-[32px]">Login</h2>
             <div className="mb-8">
               <div className="mb-4">

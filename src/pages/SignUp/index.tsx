@@ -19,8 +19,8 @@ export default function LoginPage() {
 
       // Update profile
       await supabase.from("profiles").update({ name }).eq("id", data.user.id);
-    } catch (err: any) {
-      console.error(err.message);
+    } catch (err) {
+      console.error(err);
     }
   };
 
