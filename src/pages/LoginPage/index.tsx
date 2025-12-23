@@ -1,31 +1,15 @@
-import { useState } from "react";
 import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const payload = {
-      password,
-      email,
-    };
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email");
+    const password = formData.get("password");
 
-    const response = await fetch("http://localhost:5173/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    // console.log(response);
-    console.log(payload);
-    // const data = await response.json();
-    // console.log("Backend response:", data);
+    console.log({ email, password });
   };
 
   return (
@@ -42,10 +26,9 @@ export default function LoginPage() {
                   </span>
                   <input
                     type="email"
-                    value={email}
+                    name="email"
                     placeholder="Placeholder"
                     className="pl-5 py-3 rounded-md border border-stone-400"
-                    onChange={(e) => setEmail(e.target.value)}
                     required
                   ></input>
                 </label>
@@ -57,10 +40,9 @@ export default function LoginPage() {
                   </span>
                   <input
                     type="password"
-                    value={password}
+                    name="password"
                     placeholder="Placeholder"
                     className="pl-5 py-3 rounded-md border border-stone-400"
-                    onChange={(e) => setPassword(e.target.value)}
                     required
                   ></input>
                 </label>

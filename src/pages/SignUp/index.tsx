@@ -1,6 +1,6 @@
 import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
-import { supabase } from "../../lib/supabase";
+import { supabase } from "../../lib/supabaseClient";
 import { signUp } from "../../services/auth";
 
 export default function LoginPage() {
