@@ -1,5 +1,6 @@
 import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
+import { supabase } from "../../lib/supabase";
 import { signUp } from "../../services/auth";
 
 export default function LoginPage() {
@@ -10,11 +11,14 @@ export default function LoginPage() {
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
-    console.log({ email, name, password });
 
     try {
-      const user = await signUp({ name, email, password });
-      console.log("Signed up user: ", user);
+      // Sign up
+      const data = await signUp({ email, password }); // Supabase Auth only accepts email and password for sign up
+      console.log("Signed up user: ", data.user);
+
+      // Update profile
+      await supabase.from("profiles").update({ name }).eq("id", data.user.id);
     } catch (err: any) {
       console.error(err.message);
     }
