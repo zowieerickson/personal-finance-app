@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 import { getProfile } from "../services/profile";
 import { supabase } from "../lib/supabaseClient";
 
 export default function Home() {
   const [name, setName] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadProfile = async () => {
-      let nameHolder;
-      let username;
       try {
-        nameHolder = await supabase.auth.getUser();
-        username = await getProfile(nameHolder.data.user.id);
-        setName(username.name);
+        const response = await supabase.auth.getUser();
+        if (!response.data.user) {
+          console.log("no user");
+          navigate("/login");
+          return;
+        }
+        const profile = await getProfile(response.data.user.id);
+        setName(profile.name);
       } catch (err) {
         console.error(err);
       }
@@ -20,10 +25,6 @@ export default function Home() {
 
     loadProfile();
   }, []);
-
-  const findName = async () => {};
-
-  findName();
 
   return (
     <>
