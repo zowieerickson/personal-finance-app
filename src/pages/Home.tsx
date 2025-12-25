@@ -4,7 +4,8 @@ import { getProfile } from "../services/profile";
 import { supabase } from "../lib/supabaseClient";
 
 export default function Home() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState<string | null>(null);
+  const [ready, setReady] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,16 +21,22 @@ export default function Home() {
         setName(profile.name);
       } catch (err) {
         console.error(err);
+      } finally {
+        setReady(true);
       }
     };
 
     loadProfile();
   }, []);
 
+  if (!ready) {
+    return null; // or we could add a skeleeton or minimal layout
+  }
+
   return (
     <>
       <h1>home page</h1>
-      <p>Hello {name}</p>
+      <p>Hello, {name}</p>
     </>
   );
 }
