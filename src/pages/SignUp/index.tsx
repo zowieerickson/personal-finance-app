@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router";
 import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
 import { supabase } from "../../lib/supabaseClient";
 import { signUp } from "../../services/auth";
 
 export default function LoginPage() {
+  const navigate = useNavigate();
+
   const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -20,6 +23,7 @@ export default function LoginPage() {
       // Update profile
       if (data.user) {
         await supabase.from("profiles").update({ name }).eq("id", data.user.id);
+        navigate("/");
       }
     } catch (err) {
       console.error(err);
