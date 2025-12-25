@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { getProfile } from "../services/profile";
 import { supabase } from "../lib/supabaseClient";
+import Navbar from "../components/layout/Navbar";
 
 export default function Home() {
   const [name, setName] = useState<string | null>(null);
@@ -34,9 +35,12 @@ export default function Home() {
   }
 
   return (
-    <>
-      <h1>home page</h1>
-      <p>Hello, {name}</p>
-    </>
+    <div className="flex">
+      <Navbar />
+      <div>
+        <h1>home page</h1>
+        <p>Hello, {name}</p>
+      </div>
+    </div>
   );
 }
