@@ -1,5 +1,6 @@
 import * as React from "react";
-const SvgIconBillPaid = (props) => (
+import type { SVGProps } from "react";
+const SvgIconSelected = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={14}
@@ -13,4 +14,4 @@ const SvgIconBillPaid = (props) => (
     />
   </svg>
 );
-export default SvgIconBillPaid;
+export default SvgIconSelected;
