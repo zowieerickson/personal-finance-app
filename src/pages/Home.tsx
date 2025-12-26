@@ -35,7 +35,8 @@ export default function Home() {
   }
 
   return (
-    <div className="flex">
+    <div className="flex min-h-screen">
+      {/* Refactor div classes above to root/app later */}
       <Navbar />
       <div>
         <h1>home page</h1>

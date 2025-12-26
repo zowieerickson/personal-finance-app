@@ -1,3 +1,5 @@
+import { Link, NavLink } from "react-router";
+
 import { LogoLarge } from "../logos";
 import { IconNavOverview } from "../icons";
 import { IconNavBudgets } from "../icons";
@@ -12,25 +14,60 @@ export default function Navbar() {
       <LogoLarge className="mb-10" />
       <div className="flex flex-col justify-between flex-1">
         <ul className="flex flex-col">
-          <li className="flex items-center gap-4 my-4">
-            <IconNavOverview />
-            Overview
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `flex items-center gap-4 my-4 ${isActive ? "active-link" : ""}`
+              }
+            >
+              <IconNavOverview />
+              Overview
+            </NavLink>
           </li>
-          <li className="flex items-center gap-4 my-4">
-            <IconNavTransactions />
-            Transactions
+          <li className="">
+            <NavLink
+              to="/transactions"
+              className={({ isActive }) =>
+                `flex items-center gap-4 my-4 ${isActive ? "active-link" : ""}`
+              }
+            >
+              <IconNavTransactions />
+              Transactions
+            </NavLink>
           </li>
-          <li className="flex items-center gap-4 my-4">
-            <IconNavBudgets />
-            Budgets
+          <li>
+            <NavLink
+              to="/budgets"
+              className={({ isActive }) =>
+                `flex items-center gap-4 my-4 ${isActive ? "active-link" : ""}`
+              }
+            >
+              <IconNavBudgets />
+              Budgets
+            </NavLink>
           </li>
-          <li className="flex items-center gap-4 my-4">
-            <IconNavPots />
-            Pots
+          <li>
+            <NavLink
+              to="/pots"
+              className={({ isActive }) =>
+                `flex items-center gap-4 my-4 ${isActive ? "active-link" : ""}`
+              }
+            >
+              <IconNavPots />
+              Pots
+            </NavLink>
           </li>
-          <li className="flex items-center gap-4 my-4">
-            <IconNavRecurringBills />
-            Recurring Bills
+          <li>
+            <NavLink
+              to="/recurring-bills"
+              className={({ isActive }) =>
+                `flex items-center gap-4 my-4 ${isActive ? "active-link" : ""}`
+              }
+            >
+              <IconNavRecurringBills />
+              Recurring Bills
+            </NavLink>
           </li>
         </ul>
         <div className="flex items-center gap-4">
