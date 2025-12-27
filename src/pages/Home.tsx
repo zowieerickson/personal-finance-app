@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { getProfile } from "../services/profile";
 import { supabase } from "../lib/supabaseClient";
-import Navbar from "../components/layout/Navbar";
+import Navbar from "../components/layout/Navbar/Navbar";
 
 export default function Home() {
   const [name, setName] = useState<string | null>(null);
