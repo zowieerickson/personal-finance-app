@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { getProfile } from "../services/profile";
-import { supabase } from "../lib/supabaseClient";
-import Navbar from "../components/layout/Navbar/Navbar";
+import { getProfile } from "../../services/profile";
+import { supabase } from "../../lib/supabaseClient";
 
 export default function Home() {
   const [name, setName] = useState<string | null>(null);
@@ -35,13 +34,9 @@ export default function Home() {
   }
 
   return (
-    <div className="flex min-h-screen">
-      {/* Refactor div classes above to root/app later */}
-      <Navbar />
-      <div>
-        <h1>home page</h1>
-        <p>Hello, {name}</p>
-      </div>
+    <div>
+      <h1>home page</h1>
+      <p>Hello, {name}</p>
     </div>
   );
 }
