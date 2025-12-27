@@ -2,8 +2,8 @@ import "./App.css";
 import { Routes, Route } from "react-router";
 
 import Home from "./pages/Dashboard/Home.tsx";
-import LoginPage from "./pages/LoginPage";
-import SignUp from "./pages/SignUp";
+import LoginPage from "./pages/Login/Login.tsx";
+import SignUp from "./pages/SignUp/SignUp.tsx";
 import Transactions from "./pages/Dashboard/Transactions.tsx";
 import Budgets from "./pages/Dashboard/Budgets.tsx";
 import Pots from "./pages/Dashboard/Pots.tsx";

@@ -1,56 +1,41 @@
-import { useNavigate } from "react-router";
 import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
-import { supabase } from "../../lib/supabaseClient";
-import { signUp } from "../../services/auth";
+import { signIn } from "../../services/auth";
+import { useNavigate } from "react-router";
 
-export default function LoginPage() {
+export default function Login() {
   const navigate = useNavigate();
 
-  const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    if (typeof email !== "string" || typeof password !== "string") {
+      console.error("invalid form data");
+      return;
+    }
 
     try {
-      // Sign up
-      const data = await signUp({ email, password }); // Supabase Auth only accepts email and password for sign up
-      console.log("Signed up user: ", data.user);
-
-      // Update profile
-      if (data.user) {
-        await supabase.from("profiles").update({ name }).eq("id", data.user.id);
-        navigate("/");
-      }
+      const data = await signIn({ email, password });
+      console.log("Success! ", data);
+      navigate("/");
     } catch (err) {
       console.error(err);
     }
+
+    console.log({ email, password });
   };
 
   return (
     <AuthLayout>
       <section className="h-full flex items-center justify-center w-full lg-basis-[60%] px-4">
         <div className="bg-white w-full px-5 py-6 md:p-[32px] sm:w-[560px] rounded-xl">
-          <form onSubmit={handleSignUp} className="flex flex-col pb-8">
-            <h2 className="pb-[32px] font-bold text-[32px]">Sign Up</h2>
+          <form onSubmit={handleLogin} className="flex flex-col pb-8">
+            <h2 className="pb-[32px] font-bold text-[32px]">Login</h2>
             <div className="mb-8">
-              <div className="mb-4">
-                <label className="flex flex-col">
-                  <span className="text-xs font-bold mb-2 text-stone-500">
-                    Name
-                  </span>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Placeholder"
-                    className="pl-5 py-3 rounded-md border border-stone-400"
-                    required
-                  ></input>
-                </label>
-              </div>
               <div className="mb-4">
                 <label className="flex flex-col">
                   <span className="text-xs font-bold mb-2 text-stone-500">
@@ -80,15 +65,15 @@ export default function LoginPage() {
                 </label>
               </div>
             </div>
-            <AuthSubmit>Create Account</AuthSubmit>
+            <AuthSubmit>Login</AuthSubmit>
           </form>
           <p className="text-center text-[#696868]">
-            Already have an account?
+            Need to create an account?
             <a
-              href="/login"
+              href="/signup"
               className="font-bold underline text-[#201F24] ml-2"
             >
-              Login
+              Sign&nbsp;Up
             </a>
           </p>
         </div>

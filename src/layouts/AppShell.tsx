@@ -1,4 +1,4 @@
-import Navbar from "../components/layout/Navbar/Navbar";
+import Navbar from "../components/layouts/Navbar/Navbar";
 import { Outlet } from "react-router";
 
 export default function AppShell() {
