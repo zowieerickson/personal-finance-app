@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 
 import styles from "./Navbar.module.css";
 
@@ -13,14 +13,16 @@ import { IconMinimizeMenu } from "../../icons";
 export default function Navbar() {
   return (
     <nav className="flex flex-col bg-gray-900 w-[300px] text-gray-300 pt-10 pb-32.5 pr-4 rounded-r-xl">
-      <LogoLarge className="mb-10 ml-8" />
+      <div className="mb-6">
+        <LogoLarge className="mb-10 ml-8" />
+      </div>
       <div className="flex flex-col justify-between flex-1">
-        <ul className="flex flex-col">
+        <ul className="flex flex-col gap-1">
           <li>
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 ps-8 border-l-4 font-bold border-transparent ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -33,7 +35,7 @@ export default function Navbar() {
             <NavLink
               to="/transactions"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 px-8 border-l-4 font-bold border-transparent ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -46,7 +48,7 @@ export default function Navbar() {
             <NavLink
               to="/budgets"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 px-8 border-l-4 font-bold border-transparent ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -59,7 +61,7 @@ export default function Navbar() {
             <NavLink
               to="/pots"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 px-8 border-l-4 font-bold border-transparent ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -72,7 +74,7 @@ export default function Navbar() {
             <NavLink
               to="/recurring-bills"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 px-8 border-l-4 font-bold border-transparent ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -82,7 +84,7 @@ export default function Navbar() {
             </NavLink>
           </li>
         </ul>
-        <div className="flex items-center gap-4 px-8">
+        <div className="flex items-center gap-4 ps-8 font-bold">
           <IconMinimizeMenu /> Minimize Menu
         </div>
       </div>
