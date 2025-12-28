@@ -3,18 +3,26 @@ import { NavLink } from "react-router";
 import styles from "./Navbar.module.css";
 
 import { LogoLarge } from "../../logos";
+import { LogoSmall } from "../../logos";
 import { IconNavOverview } from "../../icons";
 import { IconNavBudgets } from "../../icons";
 import { IconNavPots } from "../../icons";
 import { IconNavRecurringBills } from "../../icons";
 import { IconNavTransactions } from "../../icons";
 import { IconMinimizeMenu } from "../../icons";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [isMinimized, setIsMinimized] = useState(false);
+
   return (
-    <nav className="flex flex-col bg-gray-900 w-[300px] text-gray-300 pt-10 pb-32.5 pr-4 rounded-r-xl">
-      <div className="mb-6">
-        <LogoLarge className="mb-10 ml-8" />
+    <nav
+      className={`flex flex-col bg-gray-900 text-gray-300 pt-10 pb-32.5 pr-4 rounded-r-xl transition-all duration-300 ease-in-out ${
+        isMinimized ? "w-24" : "w-75"
+      }`}
+    >
+      <div className="mb-16 ml-8">
+        {isMinimized ? <LogoSmall /> : <LogoLarge />}
       </div>
       <div className="flex flex-col justify-between flex-1">
         <ul className="flex flex-col gap-1">
@@ -28,7 +36,7 @@ export default function Navbar() {
               }
             >
               <IconNavOverview />
-              Overview
+              <span className={isMinimized ? "hidden" : ""}>Overview</span>
             </NavLink>
           </li>
           <li className="">
@@ -41,7 +49,7 @@ export default function Navbar() {
               }
             >
               <IconNavTransactions />
-              Transactions
+              <span className={isMinimized ? "hidden" : ""}>Transactions</span>
             </NavLink>
           </li>
           <li>
@@ -54,7 +62,7 @@ export default function Navbar() {
               }
             >
               <IconNavBudgets />
-              Budgets
+              <span className={isMinimized ? "hidden" : ""}>Budgets</span>
             </NavLink>
           </li>
           <li>
@@ -67,7 +75,7 @@ export default function Navbar() {
               }
             >
               <IconNavPots />
-              Pots
+              <span className={isMinimized ? "hidden" : ""}>Pots</span>
             </NavLink>
           </li>
           <li>
@@ -80,12 +88,22 @@ export default function Navbar() {
               }
             >
               <IconNavRecurringBills />
-              Recurring Bills
+              <span className={isMinimized ? "hidden" : ""}>
+                Recurring Bills
+              </span>
             </NavLink>
           </li>
         </ul>
-        <div className="flex items-center gap-4 ps-8 font-bold">
-          <IconMinimizeMenu /> Minimize Menu
+        <div
+          className="flex items-center gap-4 ps-8 font-bold"
+          onClick={() => setIsMinimized(!isMinimized)}
+        >
+          <IconMinimizeMenu
+            className={`transition-transform duration-200 ${
+              isMinimized ? "rotate-180" : "rotate-0"
+            }`}
+          />
+          <span className={isMinimized ? "hidden" : ""}>Minimize Menu</span>
         </div>
       </div>
     </nav>
