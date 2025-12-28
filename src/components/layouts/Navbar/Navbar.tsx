@@ -36,7 +36,13 @@ export default function Navbar() {
               }
             >
               <IconNavOverview />
-              <span className={isMinimized ? "hidden" : ""}>Overview</span>
+              <span
+                className={`transition-all duration-300 ease-in-out ${
+                  isMinimized ? "hidden" : ""
+                }`}
+              >
+                Overview
+              </span>
             </NavLink>
           </li>
           <li className="">
@@ -49,7 +55,13 @@ export default function Navbar() {
               }
             >
               <IconNavTransactions />
-              <span className={isMinimized ? "hidden" : ""}>Transactions</span>
+              <span
+                className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+                }`}
+              >
+                Transactions
+              </span>
             </NavLink>
           </li>
           <li>
@@ -62,7 +74,13 @@ export default function Navbar() {
               }
             >
               <IconNavBudgets />
-              <span className={isMinimized ? "hidden" : ""}>Budgets</span>
+              <span
+                className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+                }`}
+              >
+                Budgets
+              </span>
             </NavLink>
           </li>
           <li>
@@ -75,7 +93,13 @@ export default function Navbar() {
               }
             >
               <IconNavPots />
-              <span className={isMinimized ? "hidden" : ""}>Pots</span>
+              <span
+                className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+                }`}
+              >
+                Pots
+              </span>
             </NavLink>
           </li>
           <li>
@@ -88,7 +112,11 @@ export default function Navbar() {
               }
             >
               <IconNavRecurringBills />
-              <span className={isMinimized ? "hidden" : ""}>
+              <span
+                className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+                }`}
+              >
                 Recurring Bills
               </span>
             </NavLink>
@@ -103,7 +131,13 @@ export default function Navbar() {
               isMinimized ? "rotate-180" : "rotate-0"
             }`}
           />
-          <span className={isMinimized ? "hidden" : ""}>Minimize Menu</span>
+          <span
+            className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+              isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+            }`}
+          >
+            Minimize Menu
+          </span>
         </div>
       </div>
     </nav>
