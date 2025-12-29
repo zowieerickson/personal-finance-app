@@ -47,7 +47,9 @@ export default function Navbar() {
               <IconNavOverview className="w-5 h-5 min-w-5" />
               <span
                 className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
-                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+                  isMinimized
+                    ? "opacity-0 w-0 pointer-events-none"
+                    : "opacity-100 w-auto"
                 }`}
               >
                 Overview
@@ -66,7 +68,9 @@ export default function Navbar() {
               <IconNavTransactions className="w-5 h-5 min-w-5" />
               <span
                 className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
-                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+                  isMinimized
+                    ? "opacity-0 w-0 pointer-events-none"
+                    : "opacity-100 w-auto"
                 }`}
               >
                 Transactions
@@ -85,7 +89,9 @@ export default function Navbar() {
               <IconNavBudgets className="w-5 h-5 min-w-5" />
               <span
                 className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
-                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+                  isMinimized
+                    ? "opacity-0 w-0 pointer-events-none"
+                    : "opacity-100 w-auto"
                 }`}
               >
                 Budgets
@@ -104,7 +110,9 @@ export default function Navbar() {
               <IconNavPots className="w-5 h-5 min-w-5" />
               <span
                 className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
-                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+                  isMinimized
+                    ? "opacity-0 w-0 pointer-events-none"
+                    : "opacity-100 w-auto"
                 }`}
               >
                 Pots
@@ -123,7 +131,9 @@ export default function Navbar() {
               <IconNavRecurringBills className="w-5 h-5 min-w-5" />
               <span
                 className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
-                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+                  isMinimized
+                    ? "opacity-0 w-0 pointer-events-none"
+                    : "opacity-100 w-auto"
                 }`}
               >
                 Recurring Bills
@@ -142,7 +152,9 @@ export default function Navbar() {
           />
           <span
             className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
-              isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
+              isMinimized
+                ? "opacity-0 w-0 pointer-events-none"
+                : "opacity-100 w-auto"
             }`}
           >
             Minimize Menu
