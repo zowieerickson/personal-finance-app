@@ -22,7 +22,16 @@ export default function Navbar() {
       }`}
     >
       <div className="mb-16 ml-8">
-        {isMinimized ? <LogoSmall /> : <LogoLarge />}
+        <LogoLarge
+          className={`absolute transition-opacity duration-300 ${
+            isMinimized ? "opacity-0" : "opacity-100"
+          }`}
+        />
+        <LogoSmall
+          className={`absolute transition-opacity duration-300 ${
+            isMinimized ? "opacity-100" : "opacity-0"
+          }`}
+        />
       </div>
       <div className="flex flex-col justify-between flex-1">
         <ul className="flex flex-col gap-1">
