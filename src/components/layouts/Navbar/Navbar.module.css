@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .activeLink {
-  @apply box-border bg-[#F8F4F0] text-[#201F24] rounded-r-xl border-l-4 border-l-[#277c78] pl-8;
+  @apply bg-[#F8F4F0] text-[#201F24] rounded-r-xl border-l-4 border-l-[#277c78] pl-8;
 }
 
 .activeLink svg {

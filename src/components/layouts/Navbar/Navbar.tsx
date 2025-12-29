@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`flex flex-col bg-gray-900 text-gray-300 pt-10 pb-32.5 pr-4 rounded-r-xl transition-all duration-300 ease-in-out ${
+      className={`flex flex-col bg-gray-900 text-gray-300 pt-10 pb-32.5 pr-4 rounded-r-xl transition-all duration-250 ease-in-out ${
         isMinimized ? "w-24" : "w-75"
       }`}
     >
@@ -35,10 +35,10 @@ export default function Navbar() {
                 }`
               }
             >
-              <IconNavOverview />
+              <IconNavOverview className="w-5 h-5 min-w-5" />
               <span
-                className={`transition-all duration-300 ease-in-out ${
-                  isMinimized ? "hidden" : ""
+                className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
+                  isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
                 }`}
               >
                 Overview
@@ -54,9 +54,9 @@ export default function Navbar() {
                 }`
               }
             >
-              <IconNavTransactions />
+              <IconNavTransactions className="w-5 h-5 min-w-5" />
               <span
-                className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+                className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
                   isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
                 }`}
               >
@@ -73,9 +73,9 @@ export default function Navbar() {
                 }`
               }
             >
-              <IconNavBudgets />
+              <IconNavBudgets className="w-5 h-5 min-w-5" />
               <span
-                className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+                className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
                   isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
                 }`}
               >
@@ -92,9 +92,9 @@ export default function Navbar() {
                 }`
               }
             >
-              <IconNavPots />
+              <IconNavPots className="w-5 h-5 min-w-5" />
               <span
-                className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+                className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
                   isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
                 }`}
               >
@@ -111,9 +111,9 @@ export default function Navbar() {
                 }`
               }
             >
-              <IconNavRecurringBills />
+              <IconNavRecurringBills className="w-5 h-5 min-w-5" />
               <span
-                className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+                className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
                   isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
                 }`}
               >
@@ -127,12 +127,12 @@ export default function Navbar() {
           onClick={() => setIsMinimized(!isMinimized)}
         >
           <IconMinimizeMenu
-            className={`transition-transform duration-200 ${
+            className={`transition-transform duration-250 ${
               isMinimized ? "rotate-180" : "rotate-0"
             }`}
           />
           <span
-            className={`transition-all duration-300 ease-in-out whitespace-nowrap ${
+            className={`transition-all duration-250 ease-in-out whitespace-nowrap ${
               isMinimized ? "opacity-0 w-0" : "opacity-100 w-auto"
             }`}
           >
