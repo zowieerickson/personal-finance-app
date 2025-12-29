@@ -123,7 +123,7 @@ export default function Navbar() {
           </li>
         </ul>
         <div
-          className="flex items-center gap-4 ps-8 font-bold"
+          className="flex items-center gap-4 ps-8 font-bold cursor-pointer"
           onClick={() => setIsMinimized(!isMinimized)}
         >
           <IconMinimizeMenu
