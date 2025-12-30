@@ -29,7 +29,7 @@ export default function Navbar() {
         />
         <LogoSmall
           className={`absolute transition-opacity duration-300 ${
-            isMinimized ? "opacity-100" : "opacity-0"
+            isMinimized ? "opacity-100 left-[37px]" : "opacity-0"
           }`}
         />
       </div>
