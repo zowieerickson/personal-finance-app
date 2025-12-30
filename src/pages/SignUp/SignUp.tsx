@@ -82,12 +82,9 @@ export default function SignUp() {
             </div>
             <AuthSubmit>Create Account</AuthSubmit>
           </form>
-          <p className="text-center text-[#696868]">
+          <p className="text-center text-grey-500">
             Already have an account?
-            <a
-              href="/login"
-              className="font-bold underline text-[#201F24] ml-2"
-            >
+            <a href="/login" className="font-bold underline text-grey-900 ml-2">
               Login
             </a>
           </p>

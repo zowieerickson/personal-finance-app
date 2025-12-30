@@ -67,11 +67,11 @@ export default function Login() {
             </div>
             <AuthSubmit>Login</AuthSubmit>
           </form>
-          <p className="text-center text-[#696868]">
+          <p className="text-center text-grey-500">
             Need to create an account?
             <a
               href="/signup"
-              className="font-bold underline text-[#201F24] ml-2"
+              className="font-bold underline text-grey-900 ml-2"
             >
               Sign&nbsp;Up
             </a>
