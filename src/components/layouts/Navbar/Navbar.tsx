@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`flex flex-col bg-gray-900 text-gray-300 pt-10 pb-32.5 pr-4 rounded-r-xl transition-all duration-250 ease-in-out ${
+      className={`flex flex-col bg-[#201f24] text-[#b3b3b3] pt-10 pb-32.5 pr-4 rounded-r-xl transition-all duration-250 ease-in-out ${
         isMinimized ? "w-24" : "w-75"
       }`}
     >
@@ -39,7 +39,7 @@ export default function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold hover:text-[#f2f2f2] ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -60,7 +60,7 @@ export default function Navbar() {
             <NavLink
               to="/transactions"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold hover:text-[#f2f2f2] ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -81,7 +81,7 @@ export default function Navbar() {
             <NavLink
               to="/budgets"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold hover:text-[#f2f2f2] ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -102,7 +102,7 @@ export default function Navbar() {
             <NavLink
               to="/pots"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold hover:text-[#f2f2f2] ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -123,7 +123,7 @@ export default function Navbar() {
             <NavLink
               to="/recurring-bills"
               className={({ isActive }) =>
-                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold ${
+                `flex items-center gap-4 py-4 ps-8 border-l-4 border-transparent font-bold hover:text-[#f2f2f2] ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -142,7 +142,7 @@ export default function Navbar() {
           </li>
         </ul>
         <div
-          className="flex items-center gap-4 ps-8 font-bold cursor-pointer"
+          className="flex items-center gap-4 ps-8 font-bold cursor-pointer hover:text-[#f2f2f2]"
           onClick={() => setIsMinimized(!isMinimized)}
         >
           <IconMinimizeMenu
