@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { getProfile } from "../../services/profile";
 import { supabase } from "../../lib/supabaseClient";
+import DashboardHeader from "./components/DashboardHeader";
 
 export default function Home() {
   const [name, setName] = useState<string | null>(null);
@@ -35,7 +36,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>home page</h1>
+      <DashboardHeader title="Overview" />
       <p>Hello, {name}</p>
     </div>
   );

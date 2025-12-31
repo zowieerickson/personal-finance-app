@@ -1,7 +1,9 @@
+import DashboardHeader from "./components/DashboardHeader";
+
 export default function Transactions() {
   return (
     <>
-      <h1>Transactions Page</h1>
+      <DashboardHeader title="Transactions" />
     </>
   );
 }

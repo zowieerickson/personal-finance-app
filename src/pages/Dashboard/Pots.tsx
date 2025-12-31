@@ -1,7 +1,9 @@
+import DashboardHeader from "./components/DashboardHeader";
+
 export default function Pots() {
   return (
     <>
-      <h1>Pots Page</h1>
+      <DashboardHeader title="Pots" />
     </>
   );
 }

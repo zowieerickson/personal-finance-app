@@ -1,7 +1,9 @@
+import DashboardHeader from "./components/DashboardHeader";
+
 export default function RecurringBills() {
   return (
     <>
-      <h1>Recurring Bills Page</h1>
+      <DashboardHeader title="Recurring Bills" />
     </>
   );
 }

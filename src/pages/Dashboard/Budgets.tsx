@@ -1,7 +1,9 @@
+import DashboardHeader from "./components/DashboardHeader";
+
 export default function Budgets() {
   return (
     <>
-      <h1>Budgets Page</h1>
+      <DashboardHeader title="Budgets" />
     </>
   );
 }
