@@ -5,7 +5,9 @@ export default function AppShell() {
   return (
     <div className="flex min-h-screen gap-10">
       <Navbar />
-      <Outlet />
+      <main className="mt-8">
+        <Outlet />
+      </main>
     </div>
   );
 }
