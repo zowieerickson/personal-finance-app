@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { getProfile } from "../../services/profile";
 import { supabase } from "../../lib/supabaseClient";
 import DashboardHeader from "./components/DashboardHeader";
+import StatCard from "./components/StatCard";
 
 export default function Home() {
   const [name, setName] = useState<string | null>(null);
@@ -37,6 +38,19 @@ export default function Home() {
   return (
     <div>
       <DashboardHeader title="Overview" />
+      <div className="flex gap-6">
+        <StatCard
+          className="bg-grey-900 text-white"
+          label="Current Balance"
+          value="4,836.00"
+        />
+        <StatCard label="Income" value="3,814.25" className="bg-white" />
+        <StatCard
+          label="Current Balance"
+          value="1,700.50"
+          className="bg-white"
+        />
+      </div>
       <p>Hello, {name}</p>
     </div>
   );
