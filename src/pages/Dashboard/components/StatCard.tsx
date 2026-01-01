@@ -1,13 +1,14 @@
 type StatCardProps = {
   label: string;
   value: string | number;
+  className?: string;
 };
 
-export default function StatCard({ label, value }: StatCardProps) {
+export default function StatCard({ label, value, className }: StatCardProps) {
   return (
-    <section>
-      <h3>{label}</h3>
-      <p>{value}</p>
+    <section className={`w-1/3 p-6 rounded-xl ${className ?? ""}`}>
+      <h3 className="text-preset-4 mb-3">{label}</h3>
+      <p className="text-preset-1">${value}</p>
     </section>
   );
 }
