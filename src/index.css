@@ -15,6 +15,32 @@
 @import "tailwindcss";
 
 @theme {
+  /* Font sizes */
+  --text-preset-1: 32px;
+  --text-preset-2: 20px;
+  --text-preset-3: 16px;
+  --text-preset-4: 14px;
+  --text-preset-5: 12px;
+
+  /* Line heights */
+  --text-preset-1: 120%;
+  --text-preset-2: 120%;
+  --text-preset-3: 150%;
+  --text-preset-4: 150%;
+  --text-preset-5: 150%;
+
+  /* Letter spacing */
+  --leading-preset-1: 0px;
+  --leading-preset-2: 0px;
+  --leading-preset-3: 0px;
+  --leading-preset-4: 0px;
+  --leading-preset-5: 0px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-regular: 400;
+
+  /* Colors */
   --color-beige-500: #98908b;
   --color-beige-100: #f8f4f0;
 
@@ -49,5 +75,56 @@
     line-height: 1.2;
     letter-spacing: 0px;
     font-weight: bold;
+  }
+}
+
+@layer utilities {
+  .text-preset-1 {
+    font-size: var(--text-preset-1);
+    line-height: var(--leading-preset-1);
+    letter-spacing: var(--tracking-preset-1);
+    font-weight: var(--weight-bold);
+  }
+
+  .text-preset-2 {
+    font-size: var(--text-preset-2);
+    line-height: var(--leading-preset-2);
+    letter-spacing: var(--tracking-preset-2);
+    font-weight: var(--weight-bold);
+  }
+
+  .text-preset-3 {
+    font-size: var(--text-preset-3);
+    line-height: var(--leading-preset-3);
+    letter-spacing: var(--tracking-preset-3);
+    font-weight: var(--weight-bold);
+  }
+
+  .text-preset-4 {
+    font-size: var(--text-preset-4);
+    line-height: var(--leading-preset-4);
+    letter-spacing: var(--tracking-preset-4);
+    font-weight: var(--weight-regular);
+  }
+
+  .text-preset-4-bold {
+    font-size: var(--text-preset-4);
+    line-height: var(--leading-preset-4);
+    letter-spacing: var(--tracking-preset-4);
+    font-weight: var(--weight-bold);
+  }
+
+  .text-preset-5 {
+    font-size: var(--text-preset-5);
+    line-height: var(--leading-preset-5);
+    letter-spacing: var(--tracking-preset-5);
+    font-weight: var(--weight-regular);
+  }
+
+  .text-preset-5-bold {
+    font-size: var(--text-preset-5);
+    line-height: var(--leading-preset-5);
+    letter-spacing: var(--tracking-preset-5);
+    font-weight: var(--weight-bold);
   }
 }
