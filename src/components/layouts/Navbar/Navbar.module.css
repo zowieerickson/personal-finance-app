@@ -1,12 +1,9 @@
 @reference "tailwindcss";
 
 .activeLink {
-  background-color: var(--color-beige-100);
-  color: var(--color-grey-900);
-  border-left: var(--color-green);
-  @apply rounded-r-xl border-l-4 pl-8;
+  @apply bg-(--color-beige-100) rounded-t-xl border-b-4 border-b-(--color-green) py-2 md:text-(--color-grey-900) lg:py-4 lg:border-b-0 lg:border-l-4 lg:border-l-(--color-green) lg:rounded-t-none lg:rounded-r-xl;
 }
 
 .activeLink svg {
-  color: var(--color-green);
+  @apply text-(--color-green);
 }

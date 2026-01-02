@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div>
       <DashboardHeader title="Overview" />
-      <div className="flex gap-6">
+      <div className="flex flex-col gap-3 md:gap-6 md:flex-row">
         <StatCard
           className="bg-grey-900 text-white"
           label="Current Balance"
