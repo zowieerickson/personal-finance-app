@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`flex flex-col bg-grey-900 text-grey-300 pt-4 px-4 rounded-t-xl pr-4 transition-all duration-250 ease-in-out lg:rounded-t-none lg:rounded-r-xl lg:pt-10 lg:pb-32.5 lg:px-0 lg:pr-6 ${
+      className={`flex flex-col bg-grey-900 text-grey-300 pt-2 px-4 rounded-t-xl pr-4 transition-all duration-250 ease-in-out lg:rounded-t-none lg:rounded-r-xl lg:pt-10 lg:pb-32.5 lg:px-0 lg:pr-6 ${
         isMinimized ? "lg:w-24" : "lg:w-75"
       }`}
     >
@@ -34,17 +34,17 @@ export default function Navbar() {
         />
       </div>
       <div className="flex flex-col justify-between flex-1">
-        <ul className="flex flex-row justify-between items-end gap-1 lg:flex-col lg:items-stretch">
-          <li>
+        <ul className="flex flex-row justify-between items-center lg:gap-1 lg:flex-col lg:items-stretch">
+          <li className="w-full">
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `flex items-center border-transparent px-5.5 lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
-              <IconNavOverview className="w-5 h-5 min-w-5" />
+              <IconNavOverview />
               <span
                 className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
                   isMinimized
@@ -56,16 +56,16 @@ export default function Navbar() {
               </span>
             </NavLink>
           </li>
-          <li>
+          <li className="w-full">
             <NavLink
               to="/transactions"
               className={({ isActive }) =>
-                `flex items-center border-transparent px-5.5 lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
-              <IconNavTransactions className="w-5 h-5 min-w-5" />
+              <IconNavTransactions />
               <span
                 className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
                   isMinimized
@@ -77,16 +77,16 @@ export default function Navbar() {
               </span>
             </NavLink>
           </li>
-          <li>
+          <li className="w-full">
             <NavLink
               to="/budgets"
               className={({ isActive }) =>
-                `flex items-center border-transparent px-5.5 lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
-              <IconNavBudgets className="w-5 h-5 min-w-5" />
+              <IconNavBudgets />
               <span
                 className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
                   isMinimized
@@ -98,16 +98,16 @@ export default function Navbar() {
               </span>
             </NavLink>
           </li>
-          <li>
+          <li className="w-full">
             <NavLink
               to="/pots"
               className={({ isActive }) =>
-                `flex items-center border-transparent px-5.5 lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
-              <IconNavPots className="w-5 h-5 min-w-5" />
+              <IconNavPots />
               <span
                 className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
                   isMinimized
@@ -119,16 +119,16 @@ export default function Navbar() {
               </span>
             </NavLink>
           </li>
-          <li>
+          <li className="w-full">
             <NavLink
               to="/recurring-bills"
               className={({ isActive }) =>
-                `flex items-center border-transparent px-5.5 lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
-              <IconNavRecurringBills className="w-5 h-5 min-w-5" />
+              <IconNavRecurringBills />
               <span
                 className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
                   isMinimized
