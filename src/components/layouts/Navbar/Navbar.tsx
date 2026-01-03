@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`flex flex-col bg-grey-900 text-grey-300 pt-2 px-4 rounded-t-xl pr-4 transition-all duration-250 ease-in-out lg:rounded-t-none lg:rounded-r-xl lg:pt-10 lg:pb-32.5 lg:px-0 lg:pr-6 ${
+      className={`flex flex-col bg-grey-900 text-grey-300 pt-2 px-4 rounded-t-xl pr-4 lg:transition-all lg:duration-250 lg:ease-in-out lg:rounded-t-none lg:rounded-r-xl lg:pt-10 lg:pb-32.5 lg:px-0 lg:pr-6 ${
         isMinimized ? "lg:w-24" : "lg:w-75"
       }`}
     >
