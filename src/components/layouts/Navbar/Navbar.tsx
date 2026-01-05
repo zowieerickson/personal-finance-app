@@ -39,14 +39,14 @@ export default function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
               <IconNavOverview />
               <span
-                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
+                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap md:block ${
                   isMinimized
                     ? "opacity-0 w-0 pointer-events-none"
                     : "opacity-100 w-auto"
@@ -60,14 +60,14 @@ export default function Navbar() {
             <NavLink
               to="/transactions"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
               <IconNavTransactions />
               <span
-                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
+                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap md:block ${
                   isMinimized
                     ? "opacity-0 w-0 pointer-events-none"
                     : "opacity-100 w-auto"
@@ -81,14 +81,14 @@ export default function Navbar() {
             <NavLink
               to="/budgets"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
               <IconNavBudgets />
               <span
-                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
+                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap md:block ${
                   isMinimized
                     ? "opacity-0 w-0 pointer-events-none"
                     : "opacity-100 w-auto"
@@ -102,14 +102,14 @@ export default function Navbar() {
             <NavLink
               to="/pots"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
               <IconNavPots />
               <span
-                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
+                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap md:block ${
                   isMinimized
                     ? "opacity-0 w-0 pointer-events-none"
                     : "opacity-100 w-auto"
@@ -123,14 +123,14 @@ export default function Navbar() {
             <NavLink
               to="/recurring-bills"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
             >
               <IconNavRecurringBills />
               <span
-                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap lg:block ${
+                className={`hidden transition-all duration-250 ease-in-out whitespace-nowrap md:block ${
                   isMinimized
                     ? "opacity-0 w-0 pointer-events-none"
                     : "opacity-100 w-auto"
