@@ -39,7 +39,7 @@ export default function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2.5 px-5 hover:text-grey-100 md:flex-col md:gap-2 md:font-bold lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -60,7 +60,7 @@ export default function Navbar() {
             <NavLink
               to="/transactions"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2.5 px-5 hover:text-grey-100 md:flex-col md:gap-2 md:font-bold lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -81,7 +81,7 @@ export default function Navbar() {
             <NavLink
               to="/budgets"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2.5 px-5 hover:text-grey-100 md:flex-col md:gap-2 md:font-bold lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -102,7 +102,7 @@ export default function Navbar() {
             <NavLink
               to="/pots"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2.5 px-5 hover:text-grey-100 md:flex-col md:gap-2 md:font-bold lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
@@ -123,7 +123,7 @@ export default function Navbar() {
             <NavLink
               to="/recurring-bills"
               className={({ isActive }) =>
-                `flex justify-center items-center border-b-4 border-transparent py-2 px-5 md:flex-col lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 lg:font-bold hover:text-grey-100 ${
+                `flex justify-center items-center border-b-4 border-transparent py-2.5 px-5 hover:text-grey-100 md:flex-col md:gap-2 md:font-bold lg:flex-row lg:justify-start lg:gap-4 lg:py-4 lg:ps-8 ${
                   isActive ? styles.activeLink : ""
                 }`
               }
