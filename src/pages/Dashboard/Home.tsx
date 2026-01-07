@@ -8,6 +8,7 @@ import StatCard from "./components/StatCard";
 export default function Home() {
   const [name, setName] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function Home() {
         console.error(err);
       } finally {
         setReady(true);
+        setLoading(false);
       }
     };
 
@@ -32,7 +34,7 @@ export default function Home() {
   }, []);
 
   if (!ready) {
-    return null; // or we could add a skeleeton or minimal layout
+    return <p>Loading...</p>;
   }
 
   return (
