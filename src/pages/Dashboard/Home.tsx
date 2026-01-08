@@ -4,6 +4,7 @@ import { getProfile } from "../../services/profile";
 import { supabase } from "../../lib/supabaseClient";
 import DashboardHeader from "./components/DashboardHeader";
 import StatCard from "./components/StatCard";
+import PotsCard from "./components/PotsCard";
 
 export default function Home() {
   const [name, setName] = useState<string | null>(null);
@@ -53,6 +54,7 @@ export default function Home() {
           className="bg-white"
         />
       </div>
+      <PotsCard />
       <p>Hello, {name}</p>
     </div>
   );
