@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 export default function PotsCard() {
   return (
-    <section className="flex flex-col bg-white p-8 rounded-xl">
+    <section className="flex flex-col px-5 py-6 bg-white rounded-xl md:p-8">
       <div className="flex justify-between mb-5">
         <h2 className="text-preset-2">Pots</h2>
         <Link to="pots" className="flex items-center gap-4">
@@ -12,11 +12,11 @@ export default function PotsCard() {
           <IconCaretRight />
         </Link>
       </div>
-      <div className="flex gap-5">
-        <div className="flex items-center rounded-xl bg-beige-100 px-5 py-4">
+      <div className="flex flex-col gap-5 md:flex-row">
+        <div className="flex items-center rounded-xl bg-beige-100 px-4 py-5">
           <SvgIconPot />
           <div className="ms-5.5">
-            <h3 className="mb-3 text-preset-4 text-grey-500">Total Spend</h3>
+            <h3 className="mb-3 text-preset-4 text-grey-500">Total Saved</h3>
             <p className="text-preset-1">$850</p>
           </div>
         </div>
