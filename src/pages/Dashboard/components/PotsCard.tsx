@@ -12,8 +12,8 @@ export default function PotsCard() {
           <IconCaretRight />
         </Link>
       </div>
-      <div className="flex flex-col gap-5 md:flex-row">
-        <div className="flex items-center rounded-xl bg-beige-100 px-4 py-5">
+      <div className="grid gap-5 grid-cols-1 sm:grid-cols-[minmax(247px,0.45fr)_minmax(277px,0.55fr)]">
+        <div className="flex items-center min-w-[247px] rounded-xl bg-beige-100 px-4 py-5">
           <SvgIconPot />
           <div className="ms-5.5">
             <h3 className="mb-3 text-preset-4 text-grey-500">Total Saved</h3>
