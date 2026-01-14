@@ -128,3 +128,7 @@
     font-weight: var(--weight-bold);
   }
 }
+
+button {
+  cursor: pointer;
+}
