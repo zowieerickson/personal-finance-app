@@ -1,9 +1,11 @@
+import { useState } from "react";
 import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
 import { signIn } from "../../services/auth";
 import { useNavigate } from "react-router";
 
 export default function Login() {
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -23,7 +25,8 @@ export default function Login() {
       console.log("Success! ", data);
       navigate("/");
     } catch (err) {
-      console.error(err);
+      setError(true);
+      console.error(error, err);
     }
 
     console.log({ email, password });
