@@ -3,6 +3,7 @@ import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
 import { signIn } from "../../services/auth";
 import { useNavigate } from "react-router";
+import SvgIconBillDue from "../../components/icons/IconBillDue";
 
 export default function Login() {
   const [error, setError] = useState(false);
@@ -44,15 +45,18 @@ export default function Login() {
                   <span className="text-xs font-bold mb-2 text-stone-500">
                     Email
                   </span>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Placeholder"
-                    className={`pl-5 py-3 rounded-md border  ${
-                      error ? "border-red border-4" : "border-stone-400"
-                    }`}
-                    required
-                  ></input>
+                  <span className="flex items-center relative">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Placeholder"
+                      className={`w-full pl-5 py-3 rounded-md border ${
+                        error ? "border-red " : "border-stone-400"
+                      }`}
+                      required
+                    ></input>
+                    {error && <SvgIconBillDue className="absolute right-6" />}
+                  </span>
                 </label>
               </div>
               <div>
@@ -60,17 +64,24 @@ export default function Login() {
                   <span className="text-xs font-bold mb-2 text-stone-500">
                     Password
                   </span>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Placeholder"
-                    className={`pl-5 py-3 rounded-md border  ${
-                      error ? "border-red border-4" : "border-stone-400"
-                    }`}
-                    required
-                  ></input>
+                  <span className="flex items-center relative">
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Placeholder"
+                      className={`w-full pl-5 py-3 rounded-md border  ${
+                        error ? "border-red " : "border-stone-400"
+                      }`}
+                      required
+                    ></input>
+                    {error && <SvgIconBillDue className="absolute right-6" />}
+                  </span>
                 </label>
               </div>
+
+              <span className="text-xs text-red">
+                {error ? "Invalid username or password." : "\u00A0"}
+              </span>
             </div>
             <AuthSubmit>Login</AuthSubmit>
           </form>
