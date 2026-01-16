@@ -48,7 +48,9 @@ export default function Login() {
                     type="email"
                     name="email"
                     placeholder="Placeholder"
-                    className="pl-5 py-3 rounded-md border border-stone-400"
+                    className={`pl-5 py-3 rounded-md border  ${
+                      error ? "border-red border-4" : "border-stone-400"
+                    }`}
                     required
                   ></input>
                 </label>
@@ -62,7 +64,9 @@ export default function Login() {
                     type="password"
                     name="password"
                     placeholder="Placeholder"
-                    className="pl-5 py-3 rounded-md border border-stone-400"
+                    className={`pl-5 py-3 rounded-md border  ${
+                      error ? "border-red border-4" : "border-stone-400"
+                    }`}
                     required
                   ></input>
                 </label>
