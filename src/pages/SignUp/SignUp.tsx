@@ -3,9 +3,13 @@ import AuthLayout from "../../components/auth/AuthLayout";
 import AuthSubmit from "../../components/auth/AuthSubmit";
 import { supabase } from "../../lib/supabaseClient";
 import { signUp } from "../../services/auth";
+import { useState } from "react";
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,6 +51,7 @@ export default function SignUp() {
                     name="name"
                     placeholder="Placeholder"
                     className="pl-5 py-3 rounded-md border border-stone-400"
+                    onChange={(e) => setName(e.currentTarget.value)}
                     required
                   ></input>
                 </label>
@@ -60,6 +65,7 @@ export default function SignUp() {
                     type="email"
                     name="email"
                     placeholder="Placeholder"
+                    onChange={(e) => setEmail(e.currentTarget.value)}
                     className="pl-5 py-3 rounded-md border border-stone-400"
                     required
                   ></input>
@@ -74,13 +80,20 @@ export default function SignUp() {
                     type="password"
                     name="password"
                     placeholder="Placeholder"
+                    onChange={(e) => setPassword(e.currentTarget.value)}
                     className="pl-5 py-3 rounded-md border border-stone-400"
                     required
                   ></input>
                 </label>
               </div>
             </div>
-            <AuthSubmit>Create Account</AuthSubmit>
+            <AuthSubmit
+              disabled={
+                !(name.length > 0 && email.length > 0 && password.length > 0)
+              }
+            >
+              Create Account
+            </AuthSubmit>
           </form>
           <p className="text-center text-grey-500">
             Already have an account?
