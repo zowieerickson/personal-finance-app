@@ -6,8 +6,15 @@ import { useNavigate } from "react-router";
 import SvgIconBillDue from "../../components/icons/IconBillDue";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+
+  function handleChangeEmail(e) {
+    console.log(e.currentTarget.value);
+    setEmail(e.currentTarget.value);
+  }
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,6 +57,7 @@ export default function Login() {
                       type="email"
                       name="email"
                       placeholder="Placeholder"
+                      onChange={(e) => setEmail(e.currentTarget.value)}
                       className={`w-full pl-5 py-3 rounded-md border ${
                         error ? "border-red " : "border-stone-400"
                       }`}
@@ -69,6 +77,7 @@ export default function Login() {
                       type="password"
                       name="password"
                       placeholder="Placeholder"
+                      onChange={(e) => setPassword(e.currentTarget.value)}
                       className={`w-full pl-5 py-3 rounded-md border  ${
                         error ? "border-red " : "border-stone-400"
                       }`}
@@ -83,7 +92,9 @@ export default function Login() {
                 {error ? "Invalid username or password." : "\u00A0"}
               </span>
             </div>
-            <AuthSubmit>Login</AuthSubmit>
+            <AuthSubmit disabled={!(email.length > 0 && password.length > 0)}>
+              Login
+            </AuthSubmit>
           </form>
           <p className="text-center text-grey-500">
             Need to create an account?

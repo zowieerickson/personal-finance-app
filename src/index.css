@@ -129,6 +129,26 @@
   }
 }
 
+/*
+Source - https://stackoverflow.com/a
+Posted by Fareed Alnamrouti, modified by community. See post 'Timeline' for change history
+Retrieved 2026-01-16, License - CC BY-SA 4.0
+*/
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+  -webkit-text-fill-color: var(--color-grey-900);
+}
+
 button {
   cursor: pointer;
+}
+
+button:disabled {
+  background-color: var(--color-grey-100);
+  cursor: not-allowed;
 }
