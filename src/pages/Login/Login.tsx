@@ -46,7 +46,7 @@ export default function Login() {
         <div className="bg-white w-full px-5 py-6 md:p-[32px] sm:w-[560px] rounded-xl">
           <form onSubmit={handleLogin} className="flex flex-col pb-8">
             <h2 className="pb-[32px] font-bold text-[32px]">Login</h2>
-            <div className="mb-8">
+            <div className="mb-2">
               <div className="mb-4">
                 <label className="flex flex-col">
                   <span className="text-xs font-bold mb-2 text-stone-500">
