@@ -4,11 +4,15 @@ import AuthSubmit from "../../components/auth/AuthSubmit";
 import { signIn } from "../../services/auth";
 import { useNavigate } from "react-router";
 import SvgIconBillDue from "../../components/icons/IconBillDue";
+import SvgIconShowPassword from "../../components/icons/IconShowPassword";
+import SvgIconHidePassword from "../../components/icons/IconHidePassword";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
 
   function handleChangeEmail(e) {
@@ -74,7 +78,7 @@ export default function Login() {
                   </span>
                   <span className="flex items-center relative">
                     <input
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       name="password"
                       placeholder="Placeholder"
                       onChange={(e) => setPassword(e.currentTarget.value)}
@@ -83,6 +87,17 @@ export default function Login() {
                       }`}
                       required
                     ></input>
+                    <button
+                      type="button"
+                      className="absolute right-6 pointer"
+                      onClick={() => setShowPassword((prev) => !prev)}
+                    >
+                      {showPassword ? (
+                        <SvgIconHidePassword />
+                      ) : (
+                        <SvgIconShowPassword />
+                      )}
+                    </button>
                     {error && <SvgIconBillDue className="absolute right-6" />}
                   </span>
                 </label>

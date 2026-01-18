@@ -4,12 +4,15 @@ import AuthSubmit from "../../components/auth/AuthSubmit";
 import { supabase } from "../../lib/supabaseClient";
 import { signUp } from "../../services/auth";
 import { useState } from "react";
+import SvgIconShowPassword from "../../components/icons/IconShowPassword";
+import SvgIconHidePassword from "../../components/icons/IconHidePassword";
 
 export default function SignUp() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -76,14 +79,27 @@ export default function SignUp() {
                   <span className="text-xs font-bold mb-2 text-stone-500">
                     Create Password
                   </span>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Placeholder"
-                    onChange={(e) => setPassword(e.currentTarget.value)}
-                    className="pl-5 py-3 rounded-md border border-stone-400"
-                    required
-                  ></input>
+                  <span className="flex items-center relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      placeholder="Placeholder"
+                      onChange={(e) => setPassword(e.currentTarget.value)}
+                      className="w-full pl-5 py-3 rounded-md border border-stone-400"
+                      required
+                    ></input>
+                    <button
+                      type="button"
+                      className="absolute right-6 pointer"
+                      onClick={() => setShowPassword((prev) => !prev)}
+                    >
+                      {showPassword ? (
+                        <SvgIconHidePassword />
+                      ) : (
+                        <SvgIconShowPassword />
+                      )}
+                    </button>
+                  </span>
                 </label>
               </div>
               <span className="flex justify-end text-preset-5 text-grey-500">
