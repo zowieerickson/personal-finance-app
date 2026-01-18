@@ -71,10 +71,10 @@ export default function SignUp() {
                   ></input>
                 </label>
               </div>
-              <div>
+              <div className="mb-1">
                 <label htmlFor="password" className="flex flex-col">
                   <span className="text-xs font-bold mb-2 text-stone-500">
-                    Password
+                    Create Password
                   </span>
                   <input
                     type="password"
@@ -86,6 +86,9 @@ export default function SignUp() {
                   ></input>
                 </label>
               </div>
+              <span className="flex justify-end text-preset-5 text-grey-500">
+                Password must be at least 8 characters
+              </span>
             </div>
             <AuthSubmit
               disabled={
